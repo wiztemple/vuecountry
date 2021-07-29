@@ -19,28 +19,28 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      isModalVisible: false
-    }
+      isModalVisible: false,
+    };
   },
   // fetch () {
   //   this.$store.dispatch('getCountries')
   // },
-  mounted () {
-    this.$eventBus.$on('showModal', this.showModal)
-    this.$store.dispatch('getCountries')
+  mounted() {
+    this.$eventBus.$on('showModal', this.showModal);
+    this.$store.dispatch('getCountries');
   },
-  beforeDestroy () {
-    this.$eventBus.$off('showModal', this.showModal)
+  beforeDestroy() {
+    this.$eventBus.$off('showModal', this.showModal);
   },
   methods: {
-    showModal () {
-      this.isModalVisible = true
+    showModal() {
+      this.isModalVisible = true;
     },
-    closeModal () {
-      this.isModalVisible = false
-    }
-  }
-}
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
+};
 </script>

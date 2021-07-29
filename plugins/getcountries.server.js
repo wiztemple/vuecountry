@@ -1,5 +1,5 @@
 export default async ({
-  store
+  store,
 }) => {
-  await store.dispatch('getCountries')
-}
+  await store.dispatch('getCountries');
+};

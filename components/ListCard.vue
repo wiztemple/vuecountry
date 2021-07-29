@@ -34,20 +34,20 @@ export default {
   props: {
     countryName: {
       type: String,
-      default: ''
+      default: '',
     },
     countryFlag: {
       type: String,
-      default: 'https://restcountries.eu/data/grl.svg'
-    }
+      default: 'https://restcountries.eu/data/grl.svg',
+    },
   },
   methods: {
-    close () {
-      this.$emit('open')
+    close() {
+      this.$emit('open');
     },
-    open () {
-      this.$eventBus.$emit('showModal')
-    }
-  }
-}
+    open() {
+      this.$eventBus.$emit('showModal');
+    },
+  },
+};
 </script>

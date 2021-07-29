@@ -164,10 +164,10 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      showRecentSearch: false
-    }
-  }
-}
+      showRecentSearch: false,
+    };
+  },
+};
 </script>

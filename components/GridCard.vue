@@ -38,16 +38,16 @@ export default {
   props: {
     countryName: {
       type: String,
-      default: ''
+      default: '',
     },
     countryFlag: {
       type: String,
-      default: 'https://restcountries.eu/data/grl.svg'
+      default: 'https://restcountries.eu/data/grl.svg',
     },
     countryRegion: {
       type: String,
-      default: ''
-    }
-  }
-}
+      default: '',
+    },
+  },
+};
 </script>

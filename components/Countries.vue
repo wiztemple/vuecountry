@@ -141,16 +141,17 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isList: true,
-      isFilter: false
-    }
+      isFilter: false,
+    };
   },
   methods: {
-    toggleClass (event) {
-      this.isList = !this.isList
-    }
-  }
-}
+    // eslint-disable-next-line no-unused-vars
+    toggleClass(event) {
+      this.isList = !this.isList;
+    },
+  },
+};
 </script>

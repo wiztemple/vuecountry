@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="md:px-5">
+    <div class="px-5">
       <button
         type="button"
         class="w-full flex items-center justify-between hover:bg-gray-50 border rounded-tl-xl rounded-tr-xl border-googlegrey bg-white text-variant3 py-4 px-5"

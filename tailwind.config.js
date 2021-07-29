@@ -15,27 +15,27 @@ module.exports = {
         whitegrey: '#F8FAFD',
         searchgrey: '#AEB2C5',
         propgrey: '#8F9AB0',
-        googlegrey: '#dadce0'
+        googlegrey: '#dadce0',
       },
       fontSize: {
         '24px': ['1.375rem', { lineHeight: '1.75rem' }],
-        '9px': ['.5625rem', { lineHeight: '1rem' }]
+        '9px': ['.5625rem', { lineHeight: '1rem' }],
       },
       width: () => ({
         '250px': '250px',
         '300px': '300px',
         '325px': '325px',
         '420px': '420px',
-        '660px': '660px'
+        '660px': '660px',
       }),
       height: () => ({
         '600px': '600px',
-        '800px': '800px'
-      })
-    }
+        '800px': '800px',
+      }),
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
-}
+  plugins: [],
+};
