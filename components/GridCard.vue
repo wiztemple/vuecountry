@@ -10,7 +10,11 @@
     </h1>
     <span class="block text-sm text-searchgrey pt-2">{{ countryRegion }} </span>
     <div class="flex justify-between items-center pt-5">
-      <button type="button" class="bg-whitegrey text-coregray rounded-full py-3 px-4">
+      <button
+      type="button"
+      class="bg-whitegrey text-coregray rounded-full py-3 px-4"
+      @click="open"
+      >
         View Details Summary
       </button>
       <span>
@@ -47,6 +51,14 @@ export default {
     countryRegion: {
       type: String,
       default: '',
+    },
+  },
+  methods: {
+    close() {
+      this.$emit('open');
+    },
+    open() {
+      this.$eventBus.$emit('showModal');
     },
   },
 };

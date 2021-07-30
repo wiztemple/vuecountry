@@ -1,9 +1,9 @@
 <template>
-  <div class="md:px-10 px-5 w-full">
-    <h1 class="md:text-4xl text-xl font-semibold pt-8 md:pt-0">
+  <div class="md:px-10 px-5 w-full md:h-600px overflow-y-scroll countries-scroll">
+    <h1 class="md:text-4xl bg-white text-xl font-semibold pt-8 md:pt-0 sticky top-0 z-50">
       52 Countries
     </h1>
-    <div class="flex justify-between items-center pt-6 relative">
+    <div class="flex justify-between items-center pt-6 relative z-20">
       <button
         type="button"
         class="flex items-center text-variant3 text-sm space-x-3 py-3 px-6 rounded-full border border-googlegrey hover:bg-appblue hover:bg-opacity-5 hover:text-appblue hover:border-white"
