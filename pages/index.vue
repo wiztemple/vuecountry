@@ -22,25 +22,25 @@ export default {
   data() {
     return {
       isModalVisible: false,
-    };
+    }
   },
   // fetch () {
   //   this.$store.dispatch('getCountries')
   // },
   mounted() {
-    this.$eventBus.$on('showModal', this.showModal);
-    this.$store.dispatch('getCountries');
+    this.$eventBus.$on('showModal', this.showModal)
+    this.$store.dispatch('getCountries')
   },
   beforeDestroy() {
-    this.$eventBus.$off('showModal', this.showModal);
+    this.$eventBus.$off('showModal', this.showModal)
   },
   methods: {
     showModal() {
-      this.isModalVisible = true;
+      this.isModalVisible = true
     },
     closeModal() {
-      this.isModalVisible = false;
+      this.isModalVisible = false
     },
   },
-};
+}
 </script>

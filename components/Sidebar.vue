@@ -27,7 +27,7 @@
           type="button"
           :value="region.name"
           class="w-full flex justify-between text-sm text-variant3 items-center py-3 px-3 hover:text-appblue hover:bg-appblue hover:bg-opacity-5"
-          @click="$emit('change', $event.target.value)"
+          @click="$store.dispatch('setRegion', region.name)"
         >
           <span class="flex space-x-2 items-center">
             <svg
@@ -42,7 +42,7 @@
             </svg>
             <span>{{ region.name }}</span>
           </span>
-          <span>24</span>
+          <span>{{ region.total }}</span>
         </button>
       </div>
       <button
@@ -97,95 +97,101 @@ export default {
   props: {
     select: {
       type: String,
-      default: 'cuisine'
+      default: '',
     },
     regions: {
       type: Array,
       default: () => [
         {
-          name: 'All'
+          name: 'All',
+          total: 250,
         },
         {
-          name: 'Africa'
+          name: 'Africa',
+          total: 60,
         },
         {
-          name: 'Asia'
+          name: 'Asia',
+          total: 50,
         },
         {
-          name: 'Europe'
+          name: 'Europe',
+          total: 53,
         },
         {
-          name: 'Oceania'
+          name: 'Oceania',
+          total: 27,
         },
         {
-          name: 'Americas'
-        }
-      ]
+          name: 'Americas',
+          total: 57,
+        },
+      ],
     },
     regionalBlocks: {
       type: Array,
       default: () => [
         {
           name: 'EU (European Union)',
-          value: 'eu'
+          value: 'eu',
         },
         {
           name: 'EFTA (European Free Trade Association)',
-          value: 'efta'
+          value: 'efta',
         },
         {
           name: 'CARICOM (Caribbean Community)',
-          value: 'caricom'
+          value: 'caricom',
         },
         {
           name: 'PA (Pacific Alliance)',
-          value: 'pa'
+          value: 'pa',
         },
         {
           name: 'AU (African Union)',
-          value: 'au'
+          value: 'au',
         },
         {
           name: 'USAN (Union of South American Nations)',
-          value: 'usan'
+          value: 'usan',
         },
         {
           name: 'EEU (Eurasian Economic Union)',
-          value: 'eeu'
+          value: 'eeu',
         },
         {
           name: 'ASEAN (Association of Southeast Asian Nations)',
-          value: 'asean'
+          value: 'asean',
         },
         {
           name: 'CAIS (Central American Integration System)',
-          value: 'cais'
+          value: 'cais',
         },
         {
           name: 'CEFTA (Central European Free Trade Agreement)',
-          value: 'cefta'
+          value: 'cefta',
         },
         {
           name: 'NAFTA (North American Free Trade Agreement)',
-          value: 'nafta'
+          value: 'nafta',
         },
         {
           name: 'SAARC (South Asian Association for Regional Cooperation)',
-          value: 'saarc'
-        }
-      ]
-    }
+          value: 'saarc',
+        },
+      ],
+    },
   },
-  data () {
+  data() {
     return {
       showRegions: false,
-      showSubRegions: false
+      showSubRegions: false,
     }
   },
   computed: {
-    countries () {
+    countries() {
       return this.$store.state.filteredCountries
-    }
-  }
+    },
+  },
 }
 </script>

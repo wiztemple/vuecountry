@@ -55,11 +55,11 @@ export default {
   },
   methods: {
     close() {
-      this.$emit('open');
+      this.$emit('open')
     },
     open() {
-      this.$eventBus.$emit('showModal');
+      this.$eventBus.$emit('showModal')
     },
   },
-};
+}
 </script>

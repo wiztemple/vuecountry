@@ -167,7 +167,7 @@ export default {
   data() {
     return {
       showRecentSearch: false,
-    };
+    }
   },
-};
+}
 </script>

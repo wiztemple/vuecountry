@@ -1,13 +1,16 @@
 <template>
   <div class="pt-5">
-    <ListCard country-name="Federal Republic of Nigeria" country-flag="https://restcountries.eu/data/vat.svg" />
-    <ListCard country-name="South Africa" country-flag="https://restcountries.eu/data/vat.svg" />
-    <ListCard country-name="Federal Republic of Nigeria" country-flag="https://restcountries.eu/data/vat.svg" />
-    <ListCard country-name="South Africa" country-flag="https://restcountries.eu/data/vat.svg" />
+    <ListCard v-for="country in countries" :key="country.id" :country-name="country.name" :country-flag="country.flag" />
   </div>
 </template>
 
 <script>
 export default {
-};
+  props: {
+    countries: {
+      type: Array,
+      required: true,
+    },
+  },
+}
 </script>

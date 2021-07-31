@@ -15,6 +15,10 @@
         "vue"
     ],
     "rules": {
-        "max-len": "off"
+        "max-len": "off",
+        "semi": [
+            "error",
+            "never"
+        ]
     }
 }
