@@ -70,6 +70,7 @@
           :key="index"
           type="button"
           :value="subregion.value"
+          @click="$store.dispatch('setRegionalBloc', subregion.value)"
           class="w-full flex justify-between text-sm text-variant3 items-center py-3 px-3 hover:text-appblue hover:bg-appblue hover:bg-opacity-5"
         >
           <span class="flex space-x-2 items-center">

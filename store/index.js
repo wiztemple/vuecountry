@@ -4,6 +4,7 @@ export const state = () => ({
   countries: [],
   filteredCountries: [],
   region: '',
+  regionalBloc: '',
   selectedCountry: {},
 })
 
@@ -14,6 +15,9 @@ export const mutations = {
   },
   setRegion: (state, region) => {
     state.region = region
+  },
+  setRegionalBloc: (state, regionalBloc) => {
+    state.regionalBloc = regionalBloc
   },
   filterCountries: (state, countries) => {
     state.filteredCountries = countries
@@ -35,11 +39,18 @@ export const actions = {
   setRegion({ commit }, payload) {
     commit('setRegion', payload)
   },
+  setRegionalBloc({ commit }, payload) {
+    commit('setRegionalBloc', payload)
+  },
 }
 const watchRegion = (store) => store.watch((state) => state.region,
   () => {
-    const countries = store.state.countries.filter((country) => console.log(store.state.region, country.region, 'countries') || country.region === store.state.region)
+    const countries = store.state.countries.filter((country) => country.region === store.state.region)
     store.commit('filterCountries', countries)
-    console.log(JSON.stringify(countries, null, 2), 'countries')
   })
-export const plugins = [watchRegion]
+const watchRegionalBlocs = (store) => store.watch((state) => state.regionalBloc,
+  () => {
+    const countries = store.state.countries.filter((country) => country.regionalBlocs[0]?.acronym === store.state.regionBloc)
+    store.commit('filterCountries', countries)
+  })
+export const plugins = [watchRegion, watchRegionalBlocs]

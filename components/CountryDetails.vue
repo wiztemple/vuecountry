@@ -1,11 +1,11 @@
 <template>
   <div>
     <div
-      class="justify-end items-center flex bg-black bg-opacity-25 overflow-x-hidden overflow-y-hidden fixed inset-0 z-50"
+      class="justify-end items-center flex bg-black h-screen w-screen top-0 left-0 bg-opacity-25 overflow-x-hidden overflow-y-hidden fixed inset-0 z-50"
       role="dialog"
     >
-      <transition name="slow-move">
-        <div class="md:w-420px md:h-screen h-full bg-white shadow-sm overflow-y-auto">
+      <transition name="slide">
+        <div class="md:w-420px md:h-screen h-full bg-white shadow-sm overflow-y-auto fixed right-0 top-0">
           <div class="flex justify-between items-center border-b border-gray-100 px-5 py-3">
             <h1 class="font-semibold text-24px">
               Nigeria
@@ -77,19 +77,15 @@ export default {
 }
 </script>
 
-<style lang="css">
-.slow-move {
-  animation: slow-move 6s linear;
-}
-@keyframes slow-move {
-  100% {
-    transform: translateX(-1000);
+<style>
+ .slide-enter-active,
+  .slide-leave-active
+  {
+    transition: transform .2s ease;
   }
-  50% {
-    transform: translateX(500);
+  .slide-enter,
+  .slide-leave-to {
+    transform: translateX(-100%);
+    transition: all 150ms ease-in 0s;
   }
-  0% {
-    transform: translateX(0);
-  }
-}
 </style>
